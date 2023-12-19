@@ -6,4 +6,5 @@ use (
     ./Team
     ./RatingIncrease
     ./NextRound
+    ./Bit++
 )
