@@ -7,4 +7,5 @@ use (
     ./RatingIncrease
     ./NextRound
     ./Bit++
+    ./DominoPiling
 )
