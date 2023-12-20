@@ -10,4 +10,5 @@ use (
     ./DominoPiling
     ./BeautifulMatrix
     ./PetyaAndStrings
+    ./WordCapitalization
 )
