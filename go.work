@@ -11,4 +11,16 @@ use (
     ./BeautifulMatrix
     ./PetyaAndStrings
     ./WordCapitalization
+    ./GreatElementalMergeQuest
+    ./MarblesBindFriendship
+    ./Prof.KPassword
+    ./ProblemPizza
+    ./Badminton
+    ./HogwartsMagicalLibrary
+    ./MagicalUpdate
+    ./SubspellPowerLength
+    ./WorkerCyclePlan
+    ./Furik-KingOfPoisons
+    ./BobsAuto-CorrectAdventure
+    ./ATuhsProject
 )
