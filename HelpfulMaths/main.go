@@ -12,25 +12,20 @@ func main() {
 	fmt.Scan(&addition)
 	if len(addition) < 2 {
 		fmt.Println(addition)
-	} else {
-		parts := strings.Split(addition, "+")
-		var numbers []int
-		final := ""
-
-		for _, part := range parts {
-			num, err := strconv.Atoi(part)
-			if err != nil {
-				fmt.Printf("Error converting %s to integer: %v\n", part, err)
-			} else {
-				numbers = append(numbers, num)
-			}
-		}
-		sort.Ints(numbers)
-		for _, v := range numbers {
-			temp := strconv.Itoa(v) + "+"
-			final = final + temp
-		}
-		fmt.Println(strings.TrimRight(final, "+"))
+		return
 	}
+	parts := strings.Split(addition, "+")
+	numbers := make([]int, len(parts))
 
+	for i, part := range parts {
+		if num, err := strconv.Atoi(part); err != nil {
+			fmt.Printf("Error converting %s to integer: %v\n", part, err)
+			return
+		} else {
+			numbers[i] = num
+		}
+	}
+	sort.Ints(numbers)
+	final := strings.Trim(strings.Join(strings.Fields(fmt.Sprint(numbers)), "+"), "[]")
+	fmt.Println(final)
 }
