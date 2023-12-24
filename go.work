@@ -24,4 +24,5 @@ use (
     ./BobsAuto-CorrectAdventure
     ./ATuhsProject
     ./HelpfulMaths
+    ./BoyOrGirl
 )

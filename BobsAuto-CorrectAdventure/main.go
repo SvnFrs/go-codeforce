@@ -1,58 +1,67 @@
 package main
 
 import (
-	"bufio"
 	"fmt"
-	"os"
-	"sort"
-	"strings"
 )
 
-func findAndPrintCharactersToRemove(first, second string) {
-	length := int64(len(first))
-	var indexesToRemove []int64
+type pi struct {
+	f, s int
+}
 
-	for i := int64(0); i < length; i++ {
-		removedString := first[:i] + first[i+1:]
+type pl struct {
+	f, s int64
+}
 
-		if removedString == second {
-			indexesToRemove = append(indexesToRemove, i+1)
-		}
-	}
-
-	fmt.Println(len(indexesToRemove))
-	if len(indexesToRemove) > 0 {
-		sort.Slice(indexesToRemove, func(i, j int) bool {
-			return indexesToRemove[i] < indexesToRemove[j]
-		})
-
-		result := make([]string, len(indexesToRemove))
-		for i, index := range indexesToRemove {
-			result[i] = fmt.Sprint(index)
-		}
-		fmt.Println(strings.Join(result, " "))
-	}
+type pd struct {
+	f, s float64
 }
 
 func main() {
-	scanner := bufio.NewScanner(os.Stdin)
-	scanner.Split(bufio.ScanWords)
-
-	var first, second string
-
-	if scanner.Scan() {
-		first = scanner.Text()
-	} else {
-		fmt.Println("0")
-		return
-	}
-
-	if scanner.Scan() {
-		second = scanner.Text()
-	} else {
-		fmt.Println("0")
-		return
-	}
-
-	findAndPrintCharactersToRemove(first, second)
+	solve()
 }
+
+func solve() {
+	var s1, s2 string
+	fmt.Scan(&s1, &s2)
+	ans := -1
+
+	for i := 0; i < len(s2); i++ {
+		if s1[i] != s2[i] {
+			ans = i
+			break
+		}
+	}
+
+	if ans == -1 {
+		ans = len(s1) - 1
+	}
+
+	for j := ans + 1; j < len(s1); j++ {
+		if s1[j] != s2[j-1] {
+			if ans == -1 {
+				ans = j
+			} else {
+				fmt.Println(0)
+				return
+			}
+		}
+	}
+
+	temp := ans
+	count := 1
+	for temp+1 < len(s1) && s1[temp+1] == s1[temp] {
+		count++
+		temp++
+	}
+	for ans-1 >= 0 && s1[ans-1] == s1[ans] {
+		count++
+		ans--
+	}
+	fmt.Println(count)
+
+	for i := ans; i <= temp; i++ {
+		fmt.Print(i+1, " ")
+	}
+}
+
+// The equivalent of C++ set is not directly available in Go, so the set-related definitions and functions are not translated.
