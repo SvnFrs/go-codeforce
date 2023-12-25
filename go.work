@@ -25,4 +25,5 @@ use (
     ./ATuhsProject
     ./HelpfulMaths
     ./BoyOrGirl
+    ./BearAndBigBrother
 )
