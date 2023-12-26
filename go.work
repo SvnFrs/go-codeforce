@@ -26,4 +26,5 @@ use (
     ./HelpfulMaths
     ./BoyOrGirl
     ./BearAndBigBrother
+    ./Elephant
 )

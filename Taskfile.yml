@@ -1,0 +1,22 @@
+version: "3"
+
+tasks:
+    commit:
+        desc: Commit and push changes
+        cmds:
+            - |
+              # Increment the exercise count
+              sed -Ei 's/(^exercise_count: )([0-9]+)$/\\1$((\\2+1))/' metadata.yaml
+              # Get the updated exercise count
+              exercise_count=$(grep '^exercise_count:' metadata.yaml | awk '{print $2}')
+              # Determine the suffix for the exercise count (st, nd, rd)
+              suffix="th"
+              if [ $((exercise_count % 100)) -le 20 ] && [ $((exercise_count % 100)) -ge 10 ]; then suffix="th"; else case $((exercise_count % 10)) in 1) suffix="st";; 2) suffix="nd";; 3) suffix="rd";; *) suffix="th";; esac; fi
+              # Generate the commit message
+              commit_msg="${exercise_count}${suffix} exercise done"
+              # Check if a version is provided and add it to the commit message
+              if [ -n "${VERSION}" ]; then commit_msg="${commit_msg}, ${VERSION} version"; fi
+              # Commit and push changes
+              git add .
+              git commit -m "${commit_msg}"
+              git push origin master
