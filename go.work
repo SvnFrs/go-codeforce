@@ -27,4 +27,5 @@ use (
     ./BoyOrGirl
     ./BearAndBigBrother
     ./Elephant
+    ./SoldierAndBanana
 )
