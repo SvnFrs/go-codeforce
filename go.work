@@ -29,5 +29,5 @@ use (
     ./Elephant
     ./SoldierAndBanana
     ./Word
-    ./WordSubtraction
+    ./WrongSubtraction
 )
