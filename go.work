@@ -28,4 +28,5 @@ use (
     ./BearAndBigBrother
     ./Elephant
     ./SoldierAndBanana
+    ./Word
 )
