@@ -30,4 +30,5 @@ use (
     ./SoldierAndBanana
     ./Word
     ./WrongSubtraction
+    ./NearlyLuckyNumber
 )
