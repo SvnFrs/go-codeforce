@@ -13,10 +13,10 @@ func main() {
 	for _, char := range input {
 		if char == 'D' {
 			Danik++
-		} else {
-			Anton++
 		}
 	}
+	Anton = value - Danik
+
 	if Danik > Anton {
 		fmt.Println("Danik")
 	} else if Danik == Anton {
