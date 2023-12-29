@@ -32,4 +32,5 @@ use (
     ./WrongSubtraction
     ./NearlyLuckyNumber
     ./AntonAndDanik
+    ./Translation
 )
