@@ -2,6 +2,7 @@ package main
 
 import (
 	"fmt"
+	"strings"
 )
 
 func main() {
@@ -10,18 +11,9 @@ func main() {
 	fmt.Scanln(&value)
 	fmt.Scanln(&input)
 
-	for _, char := range input {
-		if char == 'D' {
-			Danik++
-		}
-	}
+	Danik = strings.Count(input, "D")
 	Anton = value - Danik
+	winner := map[bool]string{Danik > Anton: "Danik", Danik == Anton: "Friendship", Danik < Anton: "Anton"}[true]
 
-	if Danik > Anton {
-		fmt.Println("Danik")
-	} else if Danik == Anton {
-		fmt.Println("Friendship")
-	} else {
-		fmt.Println("Anton")
-	}
+	fmt.Println(winner)
 }
