@@ -14,7 +14,6 @@ func main() {
 	for _, r := range input {
 		if unicode.IsUpper(r) {
 			hasUpper++
-			break
 		} else {
 			hasLower++
 		}
