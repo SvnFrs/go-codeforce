@@ -9,12 +9,20 @@ tasks:
                 exercise_count=$(echo "$string" | awk -F ':' '{print $2}' | tr -d '.')
                 suffix="th"
 
+                 if [ $((exercise_count % 10)) -eq 1 ]; then
+                    suffix="st"
+                elif [ $((exercise_count % 10)) -eq 2 ]; then
+                    suffix="nd"
+                elif [ $((exercise_count % 10)) -eq 3 ]; then
+                    suffix="rd"
+                fi
+
                 # commit_msg="${exercise_count}${suffix} exercise done"
-                commit_msg="Waste time just to automate things"
-                echo $exercise_count
+                commit_msg="Waste time just to automate things, this time we get suffix fix"
+                echo $commit_msg
                 git add .
                 git commit -m "${commit_msg}"
-                # git push origin master
+                git push origin master
 
     increment:
         desc: Increment the exercise count
