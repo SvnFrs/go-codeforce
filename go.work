@@ -37,4 +37,5 @@ use (
     ./QueueAtTheSchool
     ./BeautifulYear
     ./InSearchOfAnEasyProblem
+    ./GeorgeAndAccommodation
 )
