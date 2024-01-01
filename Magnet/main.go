@@ -1,18 +1,25 @@
 package main
 
-import "fmt"
+import (
+	"bufio"
+	"fmt"
+	"os"
+)
 
 func main() {
-	var number, temp int
-	fmt.Scanln(&number)
-	value := make([]int, number)
-	for i := 0; i < number; i++ {
-		fmt.Scanln(&value[i])
-	}
-	for i := 1; i < len(value); i++ {
-		if value[i] != value[i-1] {
-			temp++
+	scanner := bufio.NewScanner(os.Stdin)
+	var prevMagnet, currentMagnet string
+	groupCount := 0
+
+	for scanner.Scan() {
+		currentMagnet = scanner.Text()
+		if prevMagnet != currentMagnet {
+			groupCount++
 		}
+		prevMagnet = currentMagnet
 	}
-	fmt.Println(temp + 1)
+
+	// since we are counting transitions, there is one more group than the number of transitions.
+	// this handles the case where the last group extends to the end.
+	fmt.Println(groupCount - 1)
 }
