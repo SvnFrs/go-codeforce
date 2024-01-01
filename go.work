@@ -38,4 +38,5 @@ use (
     ./BeautifulYear
     ./InSearchOfAnEasyProblem
     ./GeorgeAndAccommodation
+    ./Magnet
 )
