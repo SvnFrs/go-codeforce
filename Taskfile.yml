@@ -17,7 +17,7 @@ tasks:
                     suffix="rd"
                 fi
 
-                commit_msg="${exercise_count}${suffix} exercise done, fast version"
+                commit_msg="${exercise_count}${suffix} exercise done"
                 # commit_msg="Waste time just to automate things, this time we get suffix fix"
                 # echo $commit_msg
                 git add .
