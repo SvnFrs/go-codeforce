@@ -40,4 +40,5 @@ use (
     ./GeorgeAndAccommodation
     ./Magnet
     ./Presents
+    ./CalculatingFunction
 )
