@@ -44,4 +44,5 @@ use (
     ./Triangle
     ./GiddyGirl
     ./Drinks
+    ./UltraFastMathematician
 )
