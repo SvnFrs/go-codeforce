@@ -47,4 +47,5 @@ use (
     ./UltraFastMathematician
     ./IsYourHorseshoeOnTheOtherHoof
     ./Hulk
+    ./DivisibilityProblem
 )
