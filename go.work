@@ -48,4 +48,5 @@ use (
     ./IsYourHorseshoeOnTheOtherHoof
     ./Hulk
     ./DivisibilityProblem
+    ./IWannaBeTheGuy
 )
